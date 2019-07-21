@@ -9,6 +9,12 @@ MEMORY {
 }
 
 SECTIONS {
+  .vector_table : {
+    . = ALIGN(4);
+    KEEP(*(.vector_table))
+    . = ALIGN(4);
+  } >FLASH
+
   .text : {
     . = ALIGN(4);
     *(.text)
