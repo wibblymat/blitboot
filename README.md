@@ -13,9 +13,14 @@ I first downloaded the [STLink utility](https://www.st.com/en/development-tools/
 Next I downloaded the [GNU embedded toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads), remembering to tick "Add path to environment variable" in the installer.
 
 ## Notes
+
+### STLink
 STLink has worked great for me, although it is pretty limited. You can view memory, but there is no disassembler, no breakpoints, no watchpoints. You can edit registers though, including PC.
 
 When you flash a file with the "Program..." menu item, you select the file. If you then try to flash an updated version of the file it will NOT re-read the file, and just reflash the old one. This cost me a lot of time!
+
+### General chip stuff
+A lot of stuff is not obvious if you read only the section of the reference manual that relates to what you want to do. For example, the GPIO section does not mention that the GPIO clock needs enabling before you can use it - the registers are actually read only until you do!
 
 # Errata
 
