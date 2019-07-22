@@ -2,7 +2,7 @@
 
 .global vectors
 
-.section .text
+.section .vector_table
 .type vectors, %object
 vectors:
 /*
