@@ -31,3 +31,11 @@ Empty flag description says that if bit 16 is 0 then the main flash is empty, an
 
 ### 29.1
 Base address is incomplete. It's written as 0x1FFF but should be 0x1FFF???? - probbably 0x1FFF75E0, just because it seems to be the only part of system memory with the correct value in it.
+
+
+## RM0433 (STM32H750 etc. reference manual)
+
+### Boot config
+It is not mentioned anywhere the full sequence of events at reset time. The boot memory address is determined as specified in 2.6, but what is not mentioned is what happens next.
+
+Firstly, whatever the boot memory address is will be set to VTOR. the CPU register that specifies the location of the interrupt vector table. Then the Reset interrupt handler is looked up in that table and jumped to. So if you have the boot address set as flash base, then you need to write your IVT at 0x08000000.
