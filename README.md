@@ -1,6 +1,6 @@
 # Setting up
 
-These instructions are for Windows 10.
+## Windows 10.
 
 I didn't start from scratch at the beginning of this project. In particular I already had:
 - VS Code + C/C++ extensions
@@ -11,6 +11,10 @@ and possibly some other things that I am relying on without realising. So you ma
 I first downloaded the [STLink utility](https://www.st.com/en/development-tools/stsw-link004.html). It came bundled with the appropriate USB drivers for communicating with the ST Link programmer board. I had to give an email address and confirm it before I could complete the download, but it can be a throwaway. I tested that it could communicate with the board, and played with the step debug and memory inspection features.
 
 Next I downloaded the [GNU embedded toolchain for ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads), remembering to tick "Add path to environment variable" in the installer.
+
+## Ubuntu 19.04
+
+`sudo apt install gcc-arm-none-eabi` to install the toolchain.
 
 ## Notes
 
